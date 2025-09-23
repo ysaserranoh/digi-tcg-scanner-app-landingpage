@@ -1,0 +1,1 @@
+# digi-tcg-scanner-app-landingpage
