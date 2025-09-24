@@ -25,7 +25,8 @@ function Home() {
             justifyContent: 'center',
             minHeight: '100vh',
             px: 3,
-            py: { xs: 12, sm: 8 },
+            py: { xs: 0, sm: 8 },
+            mt: { xs: '-10vh', sm: 0 },
             zIndex: 2
           }}
         >

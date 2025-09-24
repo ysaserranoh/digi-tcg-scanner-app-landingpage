@@ -25,7 +25,7 @@ function Contact() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          py: { xs: 10, md: 8 },
+          py: { xs: 6, md: 8 },
           position: 'relative',
           zIndex: 2
         }}
@@ -36,9 +36,9 @@ function Contact() {
             component="h1"
             sx={{
               color: 'white',
-              mb: 2,
-              mt: 4,
-              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              mb: { xs: 1, md: 2 },
+              mt: { xs: 2, md: 4 },
+              fontSize: { xs: '2rem', md: '3.5rem' },
               fontWeight: 700,
               fontFamily: 'Montserrat'
             }}
@@ -50,16 +50,16 @@ function Contact() {
             variant="body1"
             sx={{
               color: 'rgba(255, 255, 255, 0.9)',
-              mb: 6,
-              fontSize: { xs: '1rem', md: '1.2rem' },
+              mb: { xs: 3, md: 6 },
+              fontSize: { xs: '0.9rem', md: '1.2rem' },
               maxWidth: '600px',
-              margin: '0 auto 48px auto'
+              margin: { xs: '0 auto 24px auto', md: '0 auto 48px auto' }
             }}
           >
             Have questions, feedback, or business inquiries? I'd love to hear from you!
           </Typography>
 
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: 2, md: 4 }, justifyContent: 'center' }}>
             {/* Email Contact */}
             <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 45%' }, maxWidth: { xs: '100%', md: '45%' } }}>
               <Card sx={{
@@ -71,12 +71,12 @@ function Contact() {
                 display: 'flex',
                 flexDirection: 'column'
               }}>
-                <CardContent sx={{ p: 4, textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <CardContent sx={{ p: { xs: 2, md: 4 }, textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                   {/* <EmailIcon sx={{ fontSize: 48, color: '#E8DEF8', mb: 2 }} /> */}
-                  <Typography variant="h5" sx={{ color: 'white', mb: 2, fontWeight: 600 }}>
+                  <Typography variant="h5" sx={{ color: 'white', mb: { xs: 1, md: 2 }, fontWeight: 600, fontSize: { xs: '1.2rem', md: '1.5rem' } }}>
                     Email Me
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.8)', mb: 3 }}>
+                  <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.8)', mb: { xs: 2, md: 3 }, fontSize: { xs: '0.85rem', md: '0.875rem' } }}>
                     For general inquiries, support, or business opportunities
                   </Typography>
                   <Typography
@@ -107,11 +107,11 @@ function Contact() {
                 display: 'flex',
                 flexDirection: 'column'
               }}>
-                <CardContent sx={{ p: 4, textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                  <Typography variant="h5" sx={{ color: 'white', mb: 2, fontWeight: 600 }}>
+                <CardContent sx={{ p: { xs: 2, md: 4 }, textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                  <Typography variant="h5" sx={{ color: 'white', mb: { xs: 1, md: 2 }, fontWeight: 600, fontSize: { xs: '1.2rem', md: '1.5rem' } }}>
                     Follow Me
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.8)', mb: 3 }}>
+                  <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.8)', mb: { xs: 2, md: 3 }, fontSize: { xs: '0.85rem', md: '0.875rem' } }}>
                     Stay updated with the latest news and updates
                   </Typography>
 
@@ -128,7 +128,7 @@ function Contact() {
                         alignItems: 'center'
                       }}
                     >
-                      <InstagramIcon sx={{ fontSize: 32 }} />
+                      <InstagramIcon sx={{ fontSize: { xs: 28, md: 32 } }} />
                     </Box>
 
                     <Box
@@ -143,7 +143,7 @@ function Contact() {
                         alignItems: 'center'
                       }}
                     >
-                      <TikTokIcon sx={{ fontSize: 32 }} />
+                      <TikTokIcon sx={{ fontSize: { xs: 28, md: 32 } }} />
                     </Box>
                   </Box>
                 </CardContent>
@@ -155,8 +155,8 @@ function Contact() {
             variant="body2"
             sx={{
               color: 'rgba(255, 255, 255, 0.6)',
-              mt: 6,
-              fontSize: '0.9rem'
+              mt: { xs: 3, md: 6 },
+              fontSize: { xs: '0.8rem', md: '0.9rem' }
             }}
           >
             I typically respond within 24-48 hours
