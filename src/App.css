@@ -1,0 +1,74 @@
+/* Variables */
+:root {
+  --primary-color: #36205C;
+  --primary-dark: #2C184F;
+  --secondary-color: #E8DEF8;
+  --bg-dark: #2C184F;
+  --bg-light: #f8fafc;
+  --text-primary: #36205C;
+  --text-secondary: #64748b;
+  --text-white: #ffffff;
+  --text-coming-soon: #E8DEF8;
+  --border-color: #e2e8f0;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+
+/* Remove scroll */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* High-DPI image optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* SVG images should use auto rendering */
+img[src$=".svg"] {
+  image-rendering: auto;
+  -webkit-image-rendering: auto;
+}
+
+/* Retina display support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
+  }
+}
+
+/* Background que ocupa toda la pantalla */
+.hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: #2C2054;
+}
+
+.background-pattern {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ocultar imagen en pantallas grandes */
+@media (min-width: 2000px) {
+  .background-pattern {
+    display: none;
+  }
+}
