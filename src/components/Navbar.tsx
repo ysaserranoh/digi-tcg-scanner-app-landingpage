@@ -74,6 +74,38 @@ function Navbar() {
             >
               Contact
             </Button>
+            <Button
+              component={Link}
+              to="/privacy-policy"
+              sx={{
+                color: 'white',
+                fontWeight: 500,
+                textTransform: 'none',
+                fontSize: '14px',
+                fontFamily: 'Montserrat',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                }
+              }}
+            >
+              Privacy Policy
+            </Button>
+            <Button
+              component={Link}
+              to="/terms-of-service"
+              sx={{
+                color: 'white',
+                fontWeight: 500,
+                textTransform: 'none',
+                fontSize: '14px',
+                fontFamily: 'Montserrat',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                }
+              }}
+            >
+              Terms of Service
+            </Button>
           </Box>
 
           {/* Mobile Menu */}
@@ -136,6 +168,36 @@ function Navbar() {
                 }}
               >
                 Contact
+              </MenuItem>
+              <MenuItem
+                component={Link}
+                to="/privacy-policy"
+                onClick={handleMenuClose}
+                sx={{
+                  fontFamily: 'Montserrat',
+                  fontSize: '14px',
+                  color: 'white',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                  }
+                }}
+              >
+                Privacy Policy
+              </MenuItem>
+              <MenuItem
+                component={Link}
+                to="/terms-of-service"
+                onClick={handleMenuClose}
+                sx={{
+                  fontFamily: 'Montserrat',
+                  fontSize: '14px',
+                  color: 'white',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                  }
+                }}
+              >
+                Terms of Service
               </MenuItem>
             </Menu>
           </Box>

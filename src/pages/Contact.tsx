@@ -26,6 +26,7 @@ function Contact() {
           alignItems: 'center',
           justifyContent: 'center',
           py: { xs: 6, md: 8 },
+          mt: { xs: '-8vh', sm: 0 },
           position: 'relative',
           zIndex: 2
         }}
