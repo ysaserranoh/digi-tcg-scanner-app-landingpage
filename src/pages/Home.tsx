@@ -1,6 +1,14 @@
 import { Box, Typography } from '@mui/material'
+import { useState } from 'react'
+import BetaAnnouncementModal from '../components/BetaAnnouncementModal'
 
 function Home() {
+  const [showBetaModal, setShowBetaModal] = useState(true)
+
+  const handleCloseBetaModal = () => {
+    setShowBetaModal(false)
+  }
+
   return (
     <Box>
       <Box className="hero-background">
@@ -267,6 +275,8 @@ function Home() {
           />
         </Box>
       </Box>
+
+      <BetaAnnouncementModal open={showBetaModal} onClose={handleCloseBetaModal} />
     </Box>
   )
 }
