@@ -7,7 +7,7 @@ interface BetaAnnouncementModalProps {
   onClose: () => void
 }
 
-const StyledDialog = styled(Dialog)(({ theme }) => ({
+const StyledDialog = styled(Dialog)(() => ({
   '& .MuiDialog-paper': {
     backgroundColor: '#1C1B1F',
     borderRadius: '16px',
