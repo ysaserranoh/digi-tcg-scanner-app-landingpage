@@ -7,17 +7,21 @@ interface BetaAnnouncementModalProps {
   onClose: () => void
 }
 
-const StyledDialog = styled(Dialog)(() => ({
+const StyledDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
     backgroundColor: '#1C1B1F',
     borderRadius: '16px',
     padding: '8px',
     minWidth: '900px',
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '90%',
+      margin: '16px',
+    },
   },
 }))
 
-const DiscordButton = styled(Button)({
+const DiscordButton = styled(Button)(({ theme }) => ({
   backgroundColor: '#36205C',
   color: 'white',
   borderRadius: '12px',
@@ -33,7 +37,12 @@ const DiscordButton = styled(Button)({
     boxShadow: '0 4px 12px rgba(54, 32, 92, 0.4)',
   },
   transition: 'all 0.2s ease',
-})
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    fontSize: '0.9rem',
+    padding: '10px 24px',
+  },
+}))
 
 function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
   const handleDiscordClick = () => {
@@ -59,7 +68,10 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
         <CloseIcon />
       </IconButton>
 
-      <DialogContent sx={{ padding: '48px 32px', textAlign: 'center' }}>
+      <DialogContent sx={{
+        padding: { xs: '32px 24px', sm: '48px 32px' },
+        textAlign: 'center'
+      }}>
         <Box
           sx={{
             mb: 3,
@@ -72,9 +84,9 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
             src="/assets/brand-web.svg"
             alt="Digi Logo"
             sx={{
-              width: '290px',
+              width: { xs: '200px', sm: '290px' },
               height: 'auto',
-              marginBottom: '30px',
+              marginBottom: { xs: '20px', sm: '30px' },
             }}
           />
         </Box>

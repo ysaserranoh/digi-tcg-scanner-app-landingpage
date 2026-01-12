@@ -22,7 +22,7 @@ function Footer() {
         <br />
         This application is an independent fan project and is not produced, endorsed, sponsored, or affiliated in any way with Bandai Namco Entertainment Inc. or Toei Animation.
         <br />
-        All remaining original content is <span style={{ fontWeight: 500 }}>© 2020-2025 DIGI•TCG•scan.</span>
+        All remaining original content is <span style={{ fontWeight: 500 }}>© 2025-2026 DIGI•TCG•scan.</span>
       </Typography>
     </Box>
   )
