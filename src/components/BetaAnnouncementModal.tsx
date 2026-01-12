@@ -56,16 +56,23 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
         onClick={onClose}
         sx={{
           position: 'absolute',
-          right: 16,
-          top: 16,
+          right: { xs: 8, sm: 16 },
+          top: { xs: 8, sm: 16 },
           color: 'rgba(255, 255, 255, 0.7)',
+          zIndex: 10,
+          padding: { xs: '12px', sm: '8px' },
+          minWidth: { xs: '44px', sm: 'auto' },
+          minHeight: { xs: '44px', sm: 'auto' },
           '&:hover': {
             color: 'white',
             backgroundColor: 'rgba(255, 255, 255, 0.1)',
           },
+          '&:active': {
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          },
         }}
       >
-        <CloseIcon />
+        <CloseIcon sx={{ fontSize: { xs: '24px', sm: '24px' } }} />
       </IconButton>
 
       <DialogContent sx={{

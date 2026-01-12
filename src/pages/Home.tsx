@@ -84,20 +84,30 @@ function Home() {
               alignItems: 'center'
             }}>
               <Box
-                component="img"
-                src="/assets/android-badge.svg"
-                alt="Get it on Google Play"
+                component="a"
+                href="https://play.google.com/store/apps/details?id=com.ysayisa.digimontcgscanner.v2"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
-                  height: 45,
-                  cursor: 'not-allowed',
-                  opacity: 0.6,
-                  filter: 'grayscale(50%)',
-                  transition: 'opacity 0.2s ease',
-                  '&:hover': { opacity: 0.8 },
-                  imageRendering: 'auto',
-                  WebkitImageRendering: 'auto'
+                  display: 'block',
+                  lineHeight: 0
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="/assets/android-badge.svg"
+                  alt="Get it on Google Play"
+                  sx={{
+                    height: 45,
+                    cursor: 'pointer',
+                    opacity: 1,
+                    transition: 'transform 0.2s ease, opacity 0.2s ease',
+                    '&:hover': { transform: 'scale(1.05)', opacity: 0.9 },
+                    imageRendering: 'auto',
+                    WebkitImageRendering: 'auto'
+                  }}
+                />
+              </Box>
               <Box
                 component="img"
                 src="/assets/apple-badge.svg"
@@ -218,18 +228,28 @@ function Home() {
                 }}
               />
               <Box
-                component="img"
-                src="/assets/android-badge.svg"
-                alt="Get it on Google Play"
+                component="a"
+                href="https://play.google.com/store/apps/details?id=com.ysayisa.digimontcgscanner.v2"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
-                  height: { md: 45, lg: 50 },
-                  cursor: 'not-allowed',
-                  opacity: 0.6,
-                  filter: 'grayscale(50%)',
-                  transition: 'opacity 0.2s ease',
-                  '&:hover': { opacity: 0.8 }
+                  display: 'block',
+                  lineHeight: 0
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="/assets/android-badge.svg"
+                  alt="Get it on Google Play"
+                  sx={{
+                    height: { md: 45, lg: 50 },
+                    cursor: 'pointer',
+                    opacity: 1,
+                    transition: 'transform 0.2s ease, opacity 0.2s ease',
+                    '&:hover': { transform: 'scale(1.05)', opacity: 0.9 }
+                  }}
+                />
+              </Box>
             </Box>
             <Typography
               variant="h2"
