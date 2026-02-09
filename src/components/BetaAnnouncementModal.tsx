@@ -1,6 +1,10 @@
-import { Box, Dialog, DialogContent, Typography, IconButton, Button } from '@mui/material'
+import { Box, Dialog, DialogContent, Typography, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { styled } from '@mui/material/styles'
+import { useEffect } from 'react'
+import confetti from 'canvas-confetti'
+
+let confettiFired = false
 
 interface BetaAnnouncementModalProps {
   open: boolean
@@ -21,34 +25,63 @@ const StyledDialog = styled(Dialog)(({ theme }) => ({
   },
 }))
 
-const DiscordButton = styled(Button)(({ theme }) => ({
-  backgroundColor: '#36205C',
-  color: 'white',
-  borderRadius: '12px',
-  padding: '12px 32px',
-  textTransform: 'none',
-  fontSize: '1rem',
-  fontWeight: 600,
-  width: '300px',
-  fontFamily: 'Montserrat',
-  '&:hover': {
-    backgroundColor: '#2a1846',
-    transform: 'translateY(-2px)',
-    boxShadow: '0 4px 12px rgba(54, 32, 92, 0.4)',
-  },
-  transition: 'all 0.2s ease',
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
-    fontSize: '0.9rem',
-    padding: '10px 24px',
-  },
-}))
-
 function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
-  const handleDiscordClick = () => {
-    window.open('https://discord.gg/p3XYsvm8ty', '_blank')
-    onClose()
-  }
+  useEffect(() => {
+    if (!open || confettiFired) return
+    confettiFired = true
+
+    const colors = ['#E8DEF8', '#D0BCFF', '#FFFFFF', '#CCC2DC', '#B69DF8', '#FFD700', '#FF6B6B']
+
+    const canvas = document.createElement('canvas')
+    canvas.style.position = 'fixed'
+    canvas.style.top = '0'
+    canvas.style.left = '0'
+    canvas.style.width = '100vw'
+    canvas.style.height = '100vh'
+    canvas.style.zIndex = '99999'
+    canvas.style.pointerEvents = 'none'
+    document.body.appendChild(canvas)
+
+    const myConfetti = confetti.create(canvas, { resize: true })
+
+    // Delay before confetti starts (ms)
+    const timeout = setTimeout(() => {
+      const duration = 1500
+      const end = Date.now() + duration
+
+      const interval = setInterval(() => {
+        if (Date.now() > end) {
+          clearInterval(interval)
+          setTimeout(() => canvas.remove(), 3000)
+          return
+        }
+
+        myConfetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0, y: 0.5 },
+          colors,
+          scalar: 1.2,
+          gravity: 0.8,
+          ticks: 300,
+        })
+
+        myConfetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1, y: 0.5 },
+          colors,
+          scalar: 1.2,
+          gravity: 0.8,
+          ticks: 300,
+        })
+      }, 50)
+    }, 500)
+
+    // No cleanup - we want the confetti to finish even if StrictMode re-runs
+  }, [open])
 
   return (
     <StyledDialog open={open} onClose={onClose} maxWidth="sm">
@@ -101,14 +134,23 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
         <Typography
           variant="h4"
           sx={{
-            color: '#E8DEF8',
             fontWeight: 700,
             fontFamily: 'Montserrat',
             mb: 2,
             fontSize: { xs: '1.75rem', sm: '2rem' },
+            background: 'linear-gradient(90deg, #E8DEF8, #FFD700, #FF6B6B, #00E5FF, #B69DF8, #FFD700, #E8DEF8)',
+            backgroundSize: '300% 100%',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            animation: 'shimmer 3s linear infinite',
+            '@keyframes shimmer': {
+              '0%': { backgroundPosition: '0% 50%' },
+              '100%': { backgroundPosition: '300% 50%' },
+            },
           }}
         >
-          Private Beta Available!
+          The App is Live!
         </Typography>
 
         <Typography
@@ -121,29 +163,31 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
             fontSize: { xs: '0.95rem', sm: '1rem' },
           }}
         >
-          We've launched a private beta version for testing.
+          Scan your Digimon cards instantly to identify sets, check market prices, and discover every version.
           <br />
-          Be among the first to try the app and help us improve it.
+          Download now and start scanning!
         </Typography>
 
-        <DiscordButton
-          onClick={handleDiscordClick}
-          fullWidth
-          startIcon={
-            <Box
-              component="span"
-              sx={{
-                fontSize: '1.25rem',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              💬
-            </Box>
-          }
+        <Box
+          component="a"
+          href="https://play.google.com/store/apps/details?id=com.ysayisa.digimontcgscanner.v2"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => onClose()}
+          sx={{ display: 'inline-block', lineHeight: 0 }}
         >
-          Join Discord
-        </DiscordButton>
+          <Box
+            component="img"
+            src="/assets/android-badge.svg"
+            alt="Get it on Google Play"
+            sx={{
+              height: { xs: 50, sm: 60 },
+              cursor: 'pointer',
+              transition: 'transform 0.2s ease, opacity 0.2s ease',
+              '&:hover': { transform: 'scale(1.05)', opacity: 0.9 },
+            }}
+          />
+        </Box>
 
         <Typography
           variant="caption"
@@ -155,7 +199,7 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
             fontSize: '0.8rem',
           }}
         >
-          Get early access and share your feedback
+          Available now on Android. iOS coming soon!
         </Typography>
       </DialogContent>
     </StyledDialog>

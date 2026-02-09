@@ -59,6 +59,24 @@ function Navbar() {
               Guides
             </Button>
             <Button
+              component="a"
+              href="https://digi-tcg-scan.canny.io/digi-tcg-scanner-feedback"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: 'white',
+                fontWeight: 500,
+                textTransform: 'none',
+                fontSize: '14px',
+                fontFamily: 'Montserrat',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                }
+              }}
+            >
+              Roadmap
+            </Button>
+            <Button
               component={Link}
               to="/contact"
               sx={{
@@ -153,6 +171,24 @@ function Navbar() {
                 }}
               >
                 Guides
+              </MenuItem>
+              <MenuItem
+                component="a"
+                href="https://digi-tcg-scan.canny.io/digi-tcg-scanner-feedback"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleMenuClose}
+                sx={{
+                  fontFamily: 'Montserrat',
+                  fontSize: '14px',
+                  color: 'white',
+                  textDecoration: 'none',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                  }
+                }}
+              >
+                Roadmap
               </MenuItem>
               <MenuItem
                 component={Link}

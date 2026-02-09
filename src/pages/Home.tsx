@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Chip } from '@mui/material'
 import { useState } from 'react'
 import BetaAnnouncementModal from '../components/BetaAnnouncementModal'
 
@@ -108,21 +108,40 @@ function Home() {
                   }}
                 />
               </Box>
-              <Box
-                component="img"
-                src="/assets/apple-badge.svg"
-                alt="Download on App Store"
-                sx={{
-                  height: 45,
-                  cursor: 'not-allowed',
-                  opacity: 0.6,
-                  filter: 'grayscale(50%)',
-                  transition: 'opacity 0.2s ease',
-                  '&:hover': { opacity: 0.8 },
-                  imageRendering: 'auto',
-                  WebkitImageRendering: 'auto'
-                }}
-              />
+              <Box sx={{ position: 'relative', display: 'inline-block' }}>
+                <Box
+                  component="img"
+                  src="/assets/apple-badge.svg"
+                  alt="Download on App Store"
+                  sx={{
+                    height: 45,
+                    cursor: 'not-allowed',
+                    opacity: 0.6,
+                    filter: 'grayscale(50%)',
+                    transition: 'opacity 0.2s ease',
+                    '&:hover': { opacity: 0.8 },
+                    imageRendering: 'auto',
+                    WebkitImageRendering: 'auto'
+                  }}
+                />
+                <Chip
+                  label="Coming Soon"
+                  size="small"
+                  sx={{
+                    position: 'absolute',
+                    top: -12,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: '#E8DEF8',
+                    color: '#1C1B1F',
+                    fontFamily: 'Montserrat',
+                    fontWeight: 400,
+                    fontSize: '10px',
+                    height: '16px',
+                    '& .MuiChip-label': { px: '10px' },
+                  }}
+                />
+              </Box>
             </Box>
             <Typography
               variant="h2"
@@ -136,7 +155,7 @@ function Home() {
                 mb: 4
               }}
             >
-              COMING SOON!
+              AVAILABLE NOW!
             </Typography>
           </Box>
 
@@ -214,19 +233,38 @@ function Home() {
               justifyContent: 'center',
               flexWrap: 'wrap'
             }}>
-              <Box
-                component="img"
-                src="/assets/apple-badge.svg"
-                alt="Download on App Store"
-                sx={{
-                  height: { md: 45, lg: 50 },
-                  cursor: 'not-allowed',
-                  opacity: 0.6,
-                  filter: 'grayscale(50%)',
-                  transition: 'opacity 0.2s ease',
-                  '&:hover': { opacity: 0.8 }
-                }}
-              />
+              <Box sx={{ position: 'relative', display: 'inline-block' }}>
+                <Box
+                  component="img"
+                  src="/assets/apple-badge.svg"
+                  alt="Download on App Store"
+                  sx={{
+                    height: { md: 45, lg: 50 },
+                    cursor: 'not-allowed',
+                    opacity: 0.6,
+                    filter: 'grayscale(50%)',
+                    transition: 'opacity 0.2s ease',
+                    '&:hover': { opacity: 0.8 }
+                  }}
+                />
+                <Chip
+                  label="Coming Soon"
+                  size="small"
+                  sx={{
+                    position: 'absolute',
+                    top: -12,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: '#E8DEF8',
+                    color: '#1C1B1F',
+                    fontFamily: 'Montserrat',
+                    fontWeight: 400,
+                    fontSize: '10px',
+                    height: '18px',
+                    '& .MuiChip-label': { px: '10px' },
+                  }}
+                />
+              </Box>
               <Box
                 component="a"
                 href="https://play.google.com/store/apps/details?id=com.ysayisa.digimontcgscanner.v2"
@@ -263,7 +301,7 @@ function Home() {
                 lineHeight: 1
               }}
             >
-              COMING SOON!
+              AVAILABLE NOW!
             </Typography>
           </Box>
         </Box>

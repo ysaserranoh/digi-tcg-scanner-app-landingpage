@@ -14,7 +14,7 @@ function Footer() {
     }}>
       <Typography variant="body2" sx={{
         color: 'white',
-        fontSize: '10px',
+        fontSize: '12px',
         lineHeight: 1.4,
         fontFamily: 'Montserrat'
       }}>
