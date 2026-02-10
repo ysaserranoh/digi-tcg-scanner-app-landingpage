@@ -45,7 +45,7 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
     const myConfetti = confetti.create(canvas, { resize: true })
 
     // Delay before confetti starts (ms)
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       const duration = 1500
       const end = Date.now() + duration
 
