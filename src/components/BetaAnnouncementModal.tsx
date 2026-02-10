@@ -163,9 +163,9 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
             fontSize: { xs: '0.95rem', sm: '1rem' },
           }}
         >
-          Scan your Digimon cards instantly to identify sets, check market prices, and discover every version.
-          <br />
-          Download now and start scanning!
+          Scan your Digimon cards instantly to identify the exact version among all existing ones, check market prices on TCGPlayer, and discover every available version. Just point your camera, or upload a photo from your gallery. Set up price alerts so we notify you when a card reaches the price you're looking for, create price lists with automatic totals, export them to Excel, and share your cards on WhatsApp, Instagram, or Discord. Add the widget to your home screen to scan with a single tap.
+          <br /><br />
+          Download it for free and start scanning!
         </Typography>
 
         <Box
