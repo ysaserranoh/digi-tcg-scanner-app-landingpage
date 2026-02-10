@@ -121,10 +121,10 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
         >
           <Box
             component="img"
-            src="/assets/brand-web.svg"
+            src="/assets/brand.png"
             alt="Digi Logo"
             sx={{
-              width: { xs: '200px', sm: '290px' },
+              width: { xs: '140px', sm: '200px' },
               height: 'auto',
               marginBottom: { xs: '20px', sm: '30px' },
             }}
