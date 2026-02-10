@@ -16,7 +16,7 @@ const StyledDialog = styled(Dialog)(({ theme }) => ({
     backgroundColor: '#1C1B1F',
     borderRadius: '16px',
     padding: '8px',
-    minWidth: '900px',
+    minWidth: '1050px',
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
     [theme.breakpoints.down('md')]: {
       minWidth: '90%',
@@ -126,7 +126,7 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
             sx={{
               width: { xs: '140px', sm: '200px' },
               height: 'auto',
-              marginBottom: { xs: '20px', sm: '30px' },
+              marginBottom: { xs: '8px', sm: '12px' },
             }}
           />
         </Box>
@@ -136,8 +136,8 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
           sx={{
             fontWeight: 700,
             fontFamily: 'Montserrat',
-            mb: 2,
-            fontSize: { xs: '1.75rem', sm: '2rem' },
+            mb: 4,
+            fontSize: { xs: '2rem', sm: '2.5rem' },
             background: 'linear-gradient(90deg, #E8DEF8, #FFD700, #FF6B6B, #00E5FF, #B69DF8, #FFD700, #E8DEF8)',
             backgroundSize: '300% 100%',
             backgroundClip: 'text',
@@ -163,9 +163,11 @@ function BetaAnnouncementModal({ open, onClose }: BetaAnnouncementModalProps) {
             fontSize: { xs: '0.95rem', sm: '1rem' },
           }}
         >
-          Scan your Digimon cards instantly to identify the exact version among all existing ones, check market prices on TCGPlayer, and discover every available version. Just point your camera, or upload a photo from your gallery. Set up price alerts so we notify you when a card reaches the price you're looking for, create price lists with automatic totals, export them to Excel, and share your cards on WhatsApp, Instagram, or Discord. Add the widget to your home screen to scan with a single tap.
+          Scan your Digimon cards instantly to identify the exact version among all existing ones, check market prices on TCGPlayer, and discover every available version. Just point your camera, or upload a photo from your gallery.
           <br /><br />
-          Download it for free and start scanning!
+          Set up price alerts so we notify you when a card reaches the price you're looking for, create price lists with automatic totals, export them to Excel, and share your cards on WhatsApp, Instagram, or Discord. Add the widget to your home screen to scan with a single tap.
+          <br /><br />
+          <span style={{ fontSize: '1.15em' }}><span style={{ fontWeight: 600 }}>Download</span> it for <span style={{ fontWeight: 600 }}>free</span> and</span> <span style={{ fontWeight: 600, fontSize: '1.4em' }}>start scanning!</span>
         </Typography>
 
         <Box
